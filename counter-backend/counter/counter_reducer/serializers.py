@@ -1,10 +1,10 @@
 from rest_framework import serializers 
-from tutorials.models import Tutorial
+from counter_reducer.models import Counter
  
  
 class CounterReducerSerializer(serializers.ModelSerializer):
  
     class Meta:
-        model = Tutorial
+        model = Counter
         fields = ('id',
                   'value')

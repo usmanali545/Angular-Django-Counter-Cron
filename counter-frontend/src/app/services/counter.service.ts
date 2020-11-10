@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
 
-const baseUrl = "http://localhost:8000/api/counter";
+const baseUrl = "http://localhost:8000/api/counters";
 
 @Injectable({
   providedIn: "root",
@@ -17,6 +17,6 @@ export class CounterService {
 
   update(id: 1, data): Observable<any> {
     // currently we can set the id as 1
-    return this.http.put(`${baseUrl}/${id}/`, data);
+    return this.http.put(`${baseUrl}/${id}`, data);
   }
 }

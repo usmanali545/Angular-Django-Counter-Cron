@@ -7,7 +7,7 @@ import { CounterService } from "src/app/services/counter.service";
   styleUrls: ["./reduce-counter.component.css"],
 })
 export class ReduceCounterComponent implements OnInit {
-  initialValue = 100;
+  counterValue = 0;
   constructor(private counterService: CounterService) {}
 
   ngOnInit(): void {
@@ -17,7 +17,7 @@ export class ReduceCounterComponent implements OnInit {
   getCounter(id): void {
     this.counterService.get(id).subscribe(
       (data) => {
-        console.log("get counter: ", data);
+        this.counterValue = data.value;
       },
       (error) => {
         console.log("get counter error");
@@ -27,10 +27,11 @@ export class ReduceCounterComponent implements OnInit {
 
   reduceCounter(): void {
     // currently let's reduce the counter by 1
-    const data = { reduceBy: 1 };
+    const data = { value: this.counterValue - 1 };
 
     this.counterService.update(1, data).subscribe(
       (response) => {
+        this.counterValue = response.value;
         console.log("reduce counter", response);
       },
       (error) => {
