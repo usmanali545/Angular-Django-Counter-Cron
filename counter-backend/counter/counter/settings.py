@@ -25,6 +25,10 @@ SECRET_KEY = '0!u7@*=bd_(2g+_x+j$=sz-r@c73o$kubr0_p0-xoo($i^4(^8'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+CRONJOBS = [
+    ('*/2 * * * *', 'counter_reducer.cron.counter_cron_job')
+]
+
 ALLOWED_HOSTS = []
 
 CORS_ORIGIN_ALLOW_ALL = False
@@ -35,6 +39,7 @@ CORS_ORIGIN_WHITELIST = (
 # Application definition
 
 INSTALLED_APPS = [
+    'django_crontab',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
