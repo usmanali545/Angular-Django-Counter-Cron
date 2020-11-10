@@ -26,7 +26,7 @@ SECRET_KEY = '0!u7@*=bd_(2g+_x+j$=sz-r@c73o$kubr0_p0-xoo($i^4(^8'
 DEBUG = True
 
 CRONJOBS = [
-    ('*/2 * * * *', 'counter_reducer.cron.counter_cron_job')
+    ('0 0 * * 1', 'counter_reducer.cron.counter_cron_job')
 ]
 
 ALLOWED_HOSTS = []
@@ -90,7 +90,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'testdb',
-        'USER': 'postgres',
+        'USER': 'admin',
         'PASSWORD': '1234',
         'HOST': '127.0.0.1',
         'PORT': '5432',
