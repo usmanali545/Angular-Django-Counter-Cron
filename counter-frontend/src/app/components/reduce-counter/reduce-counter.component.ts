@@ -20,7 +20,7 @@ export class ReduceCounterComponent implements OnInit {
         console.log("get counter: ", data);
       },
       (error) => {
-        console.log("error");
+        console.log("get counter error");
       }
     );
   }
@@ -34,7 +34,7 @@ export class ReduceCounterComponent implements OnInit {
         console.log("reduce counter", response);
       },
       (error) => {
-        console.log(error);
+        console.log("reduce counter error", error);
       }
     );
   }
